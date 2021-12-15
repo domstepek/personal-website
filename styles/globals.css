@@ -1,5 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -13,4 +18,43 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.section-container {
+  @apply w-screen h-screen snap-center;
+}
+
+.home-section {
+  @apply w-screen h-screen relative;
+  transition: opacity 500ms linear, transform 500ms linear;
+}
+
+.home-section.hide {
+  opacity: 0;
+  transform: translateY(2.5rem);
+}
+
+.about-photo {
+  @apply bg-white ring-8 ring-white rounded-xl shadow-2xl transform;
+}
+
+#skills-header {
+  @apply text-5xl font-bold underline decoration-indigo-600;
+  transition: opacity 500ms linear, transform 500ms linear;
+}
+
+#skills-body {
+  @apply pl-4 text-xl;
+  transition: opacity 500ms linear, transform 500ms linear;
+  transition-delay: 500ms;
+}
+
+#skills-header.hide {
+  opacity: 0;
+  transform: translateX(-2.5rem);
+}
+
+#skills-body.hide {
+  opacity: 0;
+  transform: translateX(-2.5rem);
 }
