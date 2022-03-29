@@ -25,7 +25,6 @@ a {
 }
 
 .home-section {
-  @apply w-screen h-screen relative;
   transition: opacity 500ms linear, transform 500ms linear;
 }
 
@@ -44,17 +43,26 @@ a {
 }
 
 #skills-body {
-  @apply pl-4 text-xl;
-  transition: opacity 500ms linear, transform 500ms linear;
+  @apply text-xl my-auto flex flex-row gap-2 w-[70%];
+  flex-basis: 1;
+  transition: opacity 300ms linear, transform 300ms linear;
   transition-delay: 500ms;
 }
 
 #skills-header.hide {
   opacity: 0;
-  transform: translateX(-2.5rem);
+  transform: translateY(2.5rem);
 }
 
 #skills-body.hide {
   opacity: 0;
-  transform: translateX(-2.5rem);
+  transform: translateY(2.5rem);
+}
+
+.skills-body-section {
+  @apply flex flex-col gap-6 bg-zinc-800 text-zinc-100 rounded-xl shadow-xl p-8 min-w-[33%] text-center border border-zinc-500;
+}
+
+.skills-body-section > h3 {
+  @apply font-bold text-2xl pb-4 border-b border-zinc-500;
 }
